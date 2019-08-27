@@ -1,0 +1,28 @@
+{
+	"miniprogramRoot": "dist/",
+	"projectname": "taro-weapp",
+	"description": "taro",
+	"appid": "wx15bca4d5ebfcc57e",
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"libVersion": "1.9.90",
+	"condition": {}
+}
