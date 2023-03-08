@@ -1,7 +1,7 @@
 import { Component, PropsWithChildren } from 'react'
 import { View, Text, Image } from '@tarojs/components'
 import robot from '../../assets/img/robot.webp';
-import code from '../../assets/code.png';
+import code from '../../assets/code.jpg';
 import contact from '../../assets/contact.png';
 import './index.less'
 
@@ -17,6 +17,27 @@ export default class Index extends Component<PropsWithChildren> {
 
   componentDidHide () { }
 
+  onShareAppMessage() {
+    console.log('share contat');
+  }
+
+  previewCodeImg = (e) => {
+    //接收传递过来的当前图片url
+    const current = e.currentTarget.dataset.url;
+    console.log('show', current);
+
+    // @ts-ignore
+    wx.previewImage({
+      urls: ['https://doddle.oss-cn-beijing.aliyuncs.com/oldNotes/code.jpg'],
+      complete() {
+        console.log('complete');
+      },
+      fail() {
+        console.log('failed');
+      }
+    });
+  }
+
   render () {
     return (
       <View className='home'>
@@ -29,8 +50,8 @@ export default class Index extends Component<PropsWithChildren> {
           <Image className="contact-show" src={contact} />
         </View>
         <View className="contact-wrap">
-          <View className="code-wrap">
-            <Image src={code} className="img-show" />
+          <View className="code-wrap" >
+            <Image src={code} onClick={this.previewCodeImg} className="img-show" />
           </View>
           <View className='phone-wrap'>
             <View className="flex-wrap">

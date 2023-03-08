@@ -1,4 +1,4 @@
-import { Component, PropsWithChildren } from 'react'
+import { Component, PropsWithChildren } from 'react';
 import './app.less'
 
 class App extends Component<PropsWithChildren> {
@@ -8,6 +8,23 @@ class App extends Component<PropsWithChildren> {
   componentDidShow () {}
 
   componentDidHide () {}
+
+  onLaunch() {
+    console.log('onLaunch');
+    wx.login({
+      success(res) {
+        wx.showToast({
+          title: '成功' + res.code,
+          icon: 'success',
+          duration: 2000
+        });        
+        console.log('success', res);
+      },
+      failed(res) {
+        console.log('failed', res);
+      }
+    });
+  }
 
   render () {
     // this.props.children 是将要会渲染的页面
