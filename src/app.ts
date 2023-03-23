@@ -13,11 +13,11 @@ class App extends Component<PropsWithChildren> {
     console.log('onLaunch');
     wx.login({
       success(res) {
-        wx.showToast({
-          title: '成功' + res.code,
-          icon: 'success',
-          duration: 2000
-        });        
+        // wx.showToast({
+        //   title: '成功' + res.code,
+        //   icon: 'success',
+        //   duration: 2000
+        // });        
         console.log('success', res);
       },
       failed(res) {
